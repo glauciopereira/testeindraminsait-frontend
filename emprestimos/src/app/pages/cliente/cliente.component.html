@@ -1,0 +1,42 @@
+<body>
+  <h1 class="display6">Clientes</h1>
+  <hr>
+  <div  class="container-fluid">
+<a routerLink="/clientes/cadastrar" class="btn btn-primary">Cadastrar</a>
+<hr>
+<table class="table table-dark table-striped" style="text-align: center">
+  <thead>
+    <tr>
+      <th scope="col">CPF</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Logradouro</th>
+      <th scope="col">Numero</th>
+      <th scope="col">CEP</th>
+      <th scope="col">Complemento</th>
+      <th scope="col">DDD</th>
+      <th scope="col">Numero Telefone</th>
+      <th scope="col">Rendimento Mensal</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let clientes of clientes">
+      <th scope="row">{{clientes.cpf}}</th>
+      <th scope="row">{{clientes.nome}}</th>
+      <th scope="row">{{clientes.logradouro}}</th>
+      <th scope="row">{{clientes.numero}}</th>
+      <th scope="row">{{clientes.cep}}</th>
+      <th scope="row">{{clientes.complemento}}</th>
+      <th scope="row">{{clientes.ddd}}</th>
+      <th scope="row">{{clientes.numTelefone}}</th>
+      <th scope="row">{{clientes.rendimentoMensal |currency: 'BRL'}}</th>
+      <td>
+        <app-button color="primary" descricao="Editar" acao="/clientes/{{clientes.cpf}}"></app-button>
+        <button type="button" class="btn btn-danger ms-2" descricao="Deletar" (click)="delete(clientes.cpf)" >Deletar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+

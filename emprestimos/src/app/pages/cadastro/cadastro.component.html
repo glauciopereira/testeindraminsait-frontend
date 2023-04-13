@@ -1,0 +1,66 @@
+<h1 class="display6">{{ cpfcliente ? 'Alterar' : 'Cadastrar'}}</h1>
+<hr>
+<div class="container fluid">
+<form [formGroup]="clienteForm"  (ngSubmit)="handleSubmit()">
+<div class="row">
+<div class="col-3">
+  <div class="mb-3">
+    <label for="cpf" class="form-label">CPF</label>
+    <input id="cpf" type="number" class="form-control" formControlName="cpf"/>
+  </div>
+</div>
+<div class="col-5">
+  <div class="mb-3">
+    <label for="nome" class="form-label">Nome</label>
+    <input id="nome" type="text" class="form-control" formControlName="nome"/>
+  </div>
+</div>
+<div class="col-3">
+  <div class="mb-3">
+     <label for="rendimentoMensal" class="form-label">Rendimento Mensal</label>
+     <input id="rendimentoMensal" type="number" step="0.01" class="form-control" formControlName="rendimentoMensal"/>
+   </div>
+</div>
+<div class="col-3">
+  <div class="mb-3">
+    <label for="ddd" class="form-label">DDD</label>
+    <input id="ddd" type="number" class="form-control" formControlName="ddd"/>
+  </div>
+</div>
+  <div class="col-3">
+   <div class="mb-3">
+      <label for="numTelefone" class="form-label">Telefone</label>
+      <input id="numTelefone" type="number" class="form-control" formControlName="numTelefone"/>
+    </div>
+ </div>
+</div>
+<div class="row">
+  <div class="col-3">
+    <div class="mb-3">
+      <label for="logradouro" class="form-label">Logradouro</label>
+      <input id="logradouro" type="text" class="form-control" formControlName="logradouro"/>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="mb-3">
+      <label for="numero" class="form-label">Numero</label>
+      <input id="numero" type="number" class="form-control" formControlName="numero"/>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="mb-3">
+      <label for="cep" class="form-label">CEP</label>
+      <input id="cep" type="text" class="form-control" formControlName="cep"/>
+    </div>
+  </div>
+    <div class="col-5">
+     <div class="mb-3">
+        <label for="complemento" class="form-label">Complemento</label>
+        <input id="complemento" type="text" class="form-control" formControlName="complemento"/>
+      </div>
+   </div>
+  </div>
+ <button type="submit" [disabled]="!clienteForm.valid" class="btn btn-success">{{ cpfcliente ? 'Atualizar' : 'Salvar' }}</button>
+</form>
+</div>
+
